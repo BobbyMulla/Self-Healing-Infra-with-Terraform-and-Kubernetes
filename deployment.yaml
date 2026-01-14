@@ -1,0 +1,19 @@
+apiVersion: apps/v1                 # Kubernetes API version for Deployments
+kind: Deployment                    # We are creating a Deployment
+metadata:
+  name: demo-app                    # Name of the deployment
+spec:
+  replicas: 2                       # Desired number of pods (self-healing starts here)
+  selector:
+    matchLabels:
+      app: demo                     # Label used to identify pods
+  template:
+    metadata:
+      labels:
+        app: demo                   # Label applied to pods
+    spec:
+      containers:
+      - name: nginx                 # Container name
+        image: nginx:latest         # Docker image to run
+        ports:
+        - containerPort: 80         # Port exposed inside the container
