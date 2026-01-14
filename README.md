@@ -71,6 +71,8 @@ AWS credentials must have permissions for:
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
+├── deployment.yaml
+├── service.yaml
 ```
 
 ---
