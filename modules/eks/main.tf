@@ -55,7 +55,7 @@ resource "aws_iam_role_policy_attachment" "eks_cni_policy" {         # Attach ne
   role       = aws_iam_role.eks_node_role.name          # Same EC2 role
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy" # Allows pod networking (ENIs)
 }
-# Allows Kubernetes pods to get IP addresses and communicate over the VPC network
+# Allows pulling images from ECR repositories
 resource "aws_iam_role_policy_attachment" "eks_registry_policy" {    # Attach ECR read-only policy
   role       = aws_iam_role.eks_node_role.name          # Same EC2 role
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" # Allows pulling images
